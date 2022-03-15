@@ -5,7 +5,10 @@ const port = 3000 | process.env.port
 
 // Event Emitter/Handler
 const EventEmitter = require('events')
+const { json } = require('body-parser')
 var eventEmitter = new EventEmitter()
+
+app.use(json())
 
 
 app.get('/', (req, res) => {
@@ -23,10 +26,11 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/data1', (req, res) => {
+app.post('/data1', (req, res) => {
     console.log("Endpoint (data-source-1) - works")
-    eventEmitter.emit('myEvent', "data")
-    res.status(200)
+    var formattedJson = req.body.data
+    eventEmitter.emit('myEvent',formattedJson )
+    res.send("okay").status(200)
 
 })
 
