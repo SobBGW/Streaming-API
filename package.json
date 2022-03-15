@@ -1,0 +1,21 @@
+{
+  "name": "streaming-api",
+  "version": "0.0.1",
+  "description": "client API fasilitating the sending and recieving of data",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "keywords": [
+    "streaming",
+    "API",
+    "DATA",
+    "LIVE"
+  ],
+  "author": "Sobhan Akhtar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
